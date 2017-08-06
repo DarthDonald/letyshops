@@ -1,0 +1,33 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li>
+          <a>Company</a>
+        </li>
+        <li>
+          <a>{{ currentUserEmail }}</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a (click)="onLogout()">Exit</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <h2>Shops List</h2>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="list-group">
+        <a class="list-group-item">
+          <h4 class="list-group-item-heading">List group item heading</h4>
+          <p class="list-group-item-text">...</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
