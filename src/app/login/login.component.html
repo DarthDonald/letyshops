@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <h1>Login</h1>
+    <div class="alert alert-danger"
+      role="alert"
+      *ngIf="le">
+      {{errorMessage}}
+    </div>
+    <form [formGroup]="loginForm"
+      (ngSubmit)="onLogin()">
+      <input type="text"
+        placeholder="Email"
+        class="form-control"
+        formControlName="email"
+        id="email">
+      <input type="password"
+        placeholder="Password"
+        class="form-control"
+        formControlName="password"
+        id="password">
+      <button type="submit"
+        class="btn btn-success"
+        [disabled]="!loginForm.valid">Login</button>
+      <a routerLink="/registration">Registration</a>
+    </form>
+  </div>
+  <div class="col-md-4"></div>
+</div>
