@@ -16,7 +16,7 @@ export class LoggedOutGuard implements CanActivate {
     const loggedIn = Boolean(localStorage.getItem('currentUserEmail'));
 
     if (loggedIn) {
-      this.router.navigate(['/login']);
+      this.router.navigate(['/shops']);
     }
 
     return !loggedIn;

@@ -31,7 +31,7 @@ export class AuthService {
         };
       } else {
         return {
-          errorMessage: "Wrong password"
+          errorMessage: 'Wrong password'
         }
       }
     } else {

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { AuthService } from './auth.service';
 import { ShopsService } from './shops.service';
+import { PaginationService } from './pagination.service';
 
 import { LoggedInGuard } from './logged-in.guard';
 import { LoggedOutGuard } from './logged-out.guard';
@@ -15,7 +16,8 @@ import { LoggedOutGuard } from './logged-out.guard';
     AuthService,
     LoggedInGuard,
     LoggedOutGuard,
-    ShopsService
+    ShopsService,
+    PaginationService
   ],
   declarations: []
 })
