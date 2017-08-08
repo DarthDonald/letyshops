@@ -10,7 +10,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { ShopsComponent } from './shops/shops.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full', canActivate: [LoggedOutGuard] },
+  { path: '', redirectTo: '/shops', pathMatch: 'full' },
   {
     path: 'login',
     component: LoginComponent,

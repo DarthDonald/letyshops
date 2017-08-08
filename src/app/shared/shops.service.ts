@@ -15,7 +15,7 @@ export class ShopsService {
 
   constructor(private http: Http) { }
 
-  getShops(): Observable<Array<Shop>> {
+  getShops() {
     return this.http.get('http://www.json-generator.com/api/json/get/bZTcBnsIgO')
     .map(response => {
         const rawShops = response.json();
