@@ -22,11 +22,41 @@
   <h2>Shops List</h2>
   <div class="row">
     <div class="col-md-12">
-      <div class="list-group">
-        <a class="list-group-item">
-          <h4 class="list-group-item-heading">List group item heading</h4>
-          <p class="list-group-item-text">...</p>
-        </a>
+      <table class="table table-striped">
+        <tr>
+          <th>Title</th>
+          <th>Cover</th>
+          <th>Description</th>
+          <th>Shop Link</th>
+        </tr>
+        <tr *ngFor="let shop of shops | slice:paginationOptions.startIndex:paginationOptions.endIndex">
+          <td>{{ shop.title }}</td>
+          <td><img [src]="shop.cover" alt="{{shop.title}}"></td>
+          <td>{{ shop.description }}</td>
+          <td>{{ shop.link }}</td>
+        </tr>
+      </table>
+      <div class="container">
+        <div class="text-center">
+            <div *ngFor="let item of pageShops">{{item.name}}</div>
+            <ul *ngIf="paginationOptions.pages && paginationOptions.pages.length" class="pagination">
+                <li [ngClass]="{disabled:paginationOptions.currentPage === 1}">
+                    <a (click)="setPage(1)">First</a>
+                </li>
+                <li [ngClass]="{disabled:paginationOptions.currentPage === 1}">
+                    <a (click)="setPage(paginationOptions.currentPage - 1)">Previous</a>
+                </li>
+                <li *ngFor="let page of paginationOptions.pages" [ngClass]="{active:paginationOptions.currentPage === page}">
+                    <a (click)="setPage(page)">{{page}}</a>
+                </li>
+                <li [ngClass]="{disabled:paginationOptions.currentPage === paginationOptions.totalPages}">
+                    <a (click)="setPage(paginationOptions.currentPage + 1)">Next</a>
+                </li>
+                <li [ngClass]="{disabled:paginationOptions.currentPage === paginationOptions.totalPages}">
+                    <a (click)="setPage(paginationOptions.totalPages)">Last</a>
+                </li>
+            </ul>
+        </div>
       </div>
     </div>
   </div>
