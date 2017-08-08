@@ -22,7 +22,7 @@ export class PaginationService {
           endPage = currentPage + 4;
       }
     }
-    
+
     let startIndex = (currentPage - 1) * pageSize;
     let endIndex = Math.min(startIndex + pageSize, totalItems - 1);
     let pages = [];
