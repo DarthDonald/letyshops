@@ -8,6 +8,7 @@ import { LoggedOutGuard } from './shared/logged-out.guard';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { ShopsComponent } from './shops/shops.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/shops', pathMatch: 'full' },
@@ -28,7 +29,12 @@ const routes: Routes = [
     component: ShopsComponent,
     data: { name: 'Shops' },
     canActivate: [LoggedInGuard]
-  }
+  },
+  {
+    path: '404',
+    component: NotFoundComponent
+  },
+  { path: '**', redirectTo: '/404', pathMatch: 'full' },
 ];
 
 @NgModule({
